@@ -1,0 +1,35 @@
+{
+  "name": "next-with-firebase",
+  "version": "1.0.0",
+  "main": "dist/server/index.js",
+  "engines": {
+    "node": "10"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev:client": "next src/client",
+    "dev:server": "babel src/server --out-dir dist/server --source-maps --watch",
+    "dev": "npm run dev:client & npm run dev:server",
+    "build:client": "next build src/client",
+    "build:server": "babel src/server --out-dir dist/server --source-maps",
+    "build": "npm run build:client && npm run build:server",
+    "preserve": "npm run build",
+    "serve": "cross-env NODE_ENV=production firebase serve --only functions,hosting",
+    "predeploy": "rimraf dist/ && npm run build",
+    "deploy": "cross-env NODE_ENV=production firebase deploy --only functions,hosting"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "cross-env": "^7.0.2",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "firebase-admin": "^8.12.1",
+    "firebase-functions": "^3.6.1",
+    "next": "^9.3.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

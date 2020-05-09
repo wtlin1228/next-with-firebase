@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\n// src/app/components/App.js\nimport Header from \"./Header\";\n\nvar App = function App(_ref) {\n  var children = _ref.children;\n  return __jsx(\"main\", null, __jsx(Header, null), children);\n};\n\nexport default App;","map":null,"metadata":{},"sourceType":"module"}
